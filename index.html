@@ -255,17 +255,21 @@
     </style>
 </head>
 <body>
+  
     <div class="header">
         <img class="logo" src="https://i.imgur.com/YuWOptf.png" alt="Yasho Logo">
+        
         <h1>ZYUMODZ</h1>
         <h2>SCRIPT AND STUFF</h2>
         
-        <div class="social-icons">
+        
+        <div><class="social-icons">
             <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" onclick="window.open('https://www.youtube.com/@ZyuModz', '_blank')">
+            
             
         </div>
     </div>
-    
+    <h3>Wait for 10 seconds for it to load</h3>
     <div class="container">
         <div class="section">
             <div class="section-title">🎮 ROBLOX 🎮</div>
@@ -273,7 +277,7 @@
             <div class="section-content">
                 <div class="button" onclick="window.location.href = 'https://scripts-tan.vercel.app/'"><span class="emoji">🗺️</span>Roblox Scripts</div>
                 <div class="button" onclick="window.location.href = 'https://executors-eta.vercel.app/'"><span class="emoji">🧩</span> Executors</div>
-                <div class="button" onclick="window.location.href = 'https://executors-eta.vercel.app/'"><span class="emoji">❓</span> Tutorial on how to get the script</div>
+                <div class="button" onclick="window.location.href = 'https://streamable.com/8qwv6m'"><span class="emoji">❓</span> Tutorial on how to get the script</div>
                 <div class="button" onclick="window.location.href = 'https://executors-eta.vercel.app/'"><span class="emoji">👀</span> Soon..</div>
                 
                 
@@ -293,6 +297,20 @@
     </div>
     
     <script>
+      function openTutorialPopup() {
+    document.getElementById('tutorial-popup').style.display = 'flex';
+}
+
+function closeTutorialPopup(e) {
+    if (e.target.id === 'tutorial-popup') {
+        document.getElementById('tutorial-popup').style.display = 'none';
+    }
+}
+
+// Auto-open the tutorial popup after 5 seconds
+setTimeout(() => {
+    openTutorialPopup();
+}, 0);
         function openMarketplacePopup() {
             document.getElementById('marketplace-popup').style.display = 'flex';
         }
@@ -305,6 +323,7 @@
                 
             }
         }
+        
     </script>
     <div style="margin-top: 40px; text-align: center; color: var(--text-secondary); font-size: 14px; text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);">
     <span style="font-size: 1.2em;">⚠️</span>
@@ -313,6 +332,15 @@
     <a href="https://ovpnspider.en.uptodown.com/android" target="_blank" style="color: var(--secondary); text-decoration: underline; font-weight: 600;">
         OvpnSpider
     </a>
+</div>
+<!-- Tutorial Popup -->
+<div id="tutorial-popup" class="marketplace-popup" onclick="closeTutorialPopup(event)">
+    <div class="marketplace-popup-content" onclick="event.stopPropagation()">
+        <h2>Do you want to watch a tutorial?</h2>
+        <button class="popup-button" onclick="window.open('https://streamable.com/8qwv6m', '_blank')">Sure</button>
+        <button class="popup-button" onclick="closeTutorialPopup({ target: { id: 'tutorial-popup' }})">No</button>
+    </div>
+</div>
 </div>
 </body>
 </html>

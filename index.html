@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+  <script>
+  (async function detectBrave() {
+    if (navigator.brave && await navigator.brave.isBrave()) {
+      // Optional: alert the user
+      alert("Brave browser is not supported on this site.");
+      
+      // Redirect to an unsupported browser page
+      window.location.href = "/unsupported.html"; // You must create this page
+    }
+  })();
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Scripts And Stuff</title>

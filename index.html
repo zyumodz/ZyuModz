@@ -224,6 +224,12 @@
 </head>
 
 <body>
+  <div id="adblock-test" style="display:none;">
+  <script>
+    document.getElementById('adblock-test').innerHTML = 'Ads Loaded';
+  </script>
+</div>
+  
 
 
     <div class="header">
@@ -286,6 +292,18 @@
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/1b0861a26c1eab27fa7dcb146b2228c4/invoke.js"></script>
 </div>
+<script>
+  window.addEventListener('load', () => {
+    const adblockTest = document.getElementById('adblock-test');
+    const adsBlocked = !adblockTest || adblockTest.innerHTML.trim() === '';
+
+    if (adsBlocked) {
+      alert("Please disable your ad blocker to access this site.");
+      // Optionally redirect or block access
+    
+    }
+  });
+</script>
 </body>
 
 </html>

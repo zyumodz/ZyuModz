@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Scripts And Stuff</title>
   <style>
     :root {
@@ -215,19 +215,19 @@
 
 <body>
   <div class="header">
-    <img class="logo" src="https://i.imgur.com/YuWOptf.png" alt="Yasho Logo" />
+    <img class="logo" src="https://i.imgur.com/YuWOptf.png" alt="Yasho Logo">
     <h1>ZYUMODZ</h1>
     <h2>SCRIPT AND STUFF</h2>
 
     <div class="social-icons">
       <a href="https://www.youtube.com/@ZyuModz" target="_blank">
-        <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" />
+        <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
       </a>
     </div>
   </div>
 
   <div style="background-color: rgba(255, 255, 255, 0.05); padding: 10px 15px; border-radius: 10px; margin-bottom: 20px; text-align: center; color: var(--text-secondary); font-size: 15px; box-shadow: 0 0 10px rgba(138, 43, 226, 0.2); border: 1px solid rgba(138, 43, 226, 0.2); max-width: 380px;">
-    <strong>Tip:</strong> Use any browser <em>outside TikTok</em> or it won’t work.<br /><span style="color: var(--secondary); font-weight: 500;">Ignore any ads you see!</span>
+    <strong>Tip:</strong> Use any browser <em>outside TikTok</em> or it won’t work.<br><span style="color: var(--secondary); font-weight: 500;">Ignore any ads you see!</span>
   </div>
 
   <div class="container">
@@ -236,54 +236,75 @@
       <div class="glow-effect"></div>
       <div class="section-content">
         <a href="https://scripts-tan.vercel.app/" class="button" target="_blank"><span class="emoji">🗺️</span>Roblox Scripts</a>
-        <a href="https://executors-eta.vercel.app/" class="button" target="_blank"><span class="emoji">🧩</span>Executors</a>
-        <a href="https://streamable.com/8qwv6m" class="button" target="_blank"><span class="emoji">❓</span>Tutorial</a>
-        <a href="#" class="button" target="_blank"><span class="emoji">👀</span>Soon..</a>
+        <a href="https://executors-eta.vercel.app/" class="button" target="_blank"><span class="emoji">🧩</span> Executors</a>
+        <a href="https://streamable.com/8qwv6m" class="button" target="_blank"><span class="emoji">❓</span> Tutorial on how to get the script</a>
+        <a href="https://executors-eta.vercel.app/" class="button" target="_blank"><span class="emoji">👀</span> Soon..</a>
       </div>
     </div>
-
-    <div style="margin-top: 40px; text-align: center; color: var(--text-secondary); font-size: 14px; text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);">
-      <span style="font-size: 1.2em;">⚠️</span> <strong>Note:</strong> USE VPN IF IT TAKES TOO LONG TO LOAD.<br />
-      Here's my recommended VPN:
-      <a href="https://ovpnspider.en.uptodown.com/android" target="_blank" style="color: var(--secondary); text-decoration: underline; font-weight: 600;">OvpnSpider</a>
-    </div>
-
-    <!-- Adsterra Ad -->
-    <div style="display: flex; justify-content: center; margin: 20px 0;">
-      <div id="adsterra-banner"></div>
-      <script type="text/javascript">
-        atOptions = {
-          'key': '1b0861a26c1eab27fa7dcb146b2228c4',
-          'format': 'iframe',
-          'height': 300,
-          'width': 160,
-          'params': {}
-        };
-      </script>
-      <script type="text/javascript" src="//www.highperformanceformat.com/1b0861a26c1eab27fa7dcb146b2228c4/invoke.js"></script>
-    </div>
   </div>
 
-  <!-- TikTok Warning -->
-  <div id="tiktok-warning" style="display:none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--primary-dark); color: white; padding: 12px 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(138,43,226,0.6); font-weight: bold; z-index: 9999; cursor: pointer;">
-    Open in Chrome for full functionality
+  <div style="margin-top: 40px; text-align: center; color: var(--text-secondary); font-size: 14px; text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);">
+    <span style="font-size: 1.2em;">⚠️</span>
+    <strong>Note:</strong> USE VPN IF IT TAKES TOO LONG TO LOAD.<br>
+    Here's my recommended VPN:
+    <a href="https://ovpnspider.en.uptodown.com/android" target="_blank" style="color: var(--secondary); text-decoration: underline; font-weight: 600;">
+      OvpnSpider
+    </a>
   </div>
 
+  <!-- TikTok Browser Redirect -->
   <script>
-    const ua = navigator.userAgent.toLowerCase();
-    if (ua.includes("tiktok")) {
-      const warning = document.getElementById("tiktok-warning");
-      warning.style.display = "block";
-      warning.addEventListener("click", () => {
-        const url = window.location.href;
-        window.location.href = "googlechrome://" + url.replace(/^https?:\/\//, '');
+    if (navigator.userAgent.includes("TikTok")) {
+      document.addEventListener("DOMContentLoaded", function () {
+        const tiktokMessage = document.createElement("div");
+        tiktokMessage.style.position = "fixed";
+        tiktokMessage.style.top = "10px";
+        tiktokMessage.style.left = "50%";
+        tiktokMessage.style.transform = "translateX(-50%)";
+        tiktokMessage.style.backgroundColor = "#1e1e1e";
+        tiktokMessage.style.padding = "10px";
+        tiktokMessage.style.borderRadius = "10px";
+        tiktokMessage.style.color = "#ffffff";
+        tiktokMessage.style.fontSize = "16px";
+        tiktokMessage.style.textAlign = "center";
+        tiktokMessage.style.zIndex = "9999";
+        tiktokMessage.innerHTML = "For the best experience, please open this link in a browser like Chrome.";
+
+        const button = document.createElement("button");
+        button.innerHTML = "Open in Browser";
+        button.style.marginTop = "10px";
+        button.style.backgroundColor = "#8a2be2";
+        button.style.color = "#ffffff";
+        button.style.padding = "10px";
+        button.style.borderRadius = "5px";
+        button.style.border = "none";
+        button.style.cursor = "pointer";
+        button.style.fontSize = "16px";
+        button.style.transition = "transform 0.3s ease";
+        button.addEventListener("click", function () {
+          window.location.href = "https://www.google.com/chrome/";
+        });
+
+        tiktokMessage.appendChild(button);
+        document.body.appendChild(tiktokMessage);
       });
     }
   </script>
 
-  <!-- Legal Disclaimer -->
-  <div style="color: var(--text-secondary); font-size: 13px; text-align: center; max-width: 400px; margin: 40px auto 10px;">
-    <p><strong>Disclaimer:</strong> This site is for educational purposes only. We do not host or distribute copyrighted material or harmful software. Use responsibly.</p>
+  <!-- Banner Ad (Adsterra iframe) -->
+  <div style="display: flex; justify-content: center; margin: 20px 0;">
+    <div id="adsterra-banner"></div>
+    <script type="text/javascript">
+      atOptions = {
+        'key': '1b0861a26c1eab27fa7dcb146b2228c4',
+        'format': 'iframe',
+        'height': 300,
+        'width': 160,
+        'params': {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/1b0861a26c1eab27fa7dcb146b2228c4/invoke.js"></script>
   </div>
 </body>
+
 </html>

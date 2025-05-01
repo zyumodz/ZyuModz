@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Scripts And Stuff</title>
   <style>
     :root {
@@ -210,6 +210,11 @@
         font-size: 42px;
       }
     }
+
+    .popup-button:hover {
+      background-color: var(--secondary);
+      transform: scale(1.05);
+    }
   </style>
 </head>
 
@@ -227,45 +232,61 @@
   </div>
 
   <div style="background-color: rgba(255, 255, 255, 0.05); padding: 10px 15px; border-radius: 10px; margin-bottom: 20px; text-align: center; color: var(--text-secondary); font-size: 15px; box-shadow: 0 0 10px rgba(138, 43, 226, 0.2); border: 1px solid rgba(138, 43, 226, 0.2); max-width: 380px;">
-  <strong>Tip:</strong> Use any browser <em>outside TikTok</em> or it won’t work.<br><span style="color: var(--secondary); font-weight: 500;">Ignore any ads you see!</span>
-</div>
+    <strong>Tip:</strong> Use any browser <em>outside TikTok</em> or it won’t work.<br><span style="color: var(--secondary); font-weight: 500;">Ignore any ads you see!</span>
+  </div>
 
   <div class="container">
     <div class="section">
       <div class="section-title">🎮 ROBLOX 🎮</div>
       <div class="glow-effect"></div>
       <div class="section-content">
-        <a class="button" href="https://scripts-tan.vercel.app/" target="_blank"><span class="emoji">🗺️</span>Roblox Scripts</a>
-        <a class="button" href="https://executors-eta.vercel.app/" target="_blank"><span class="emoji">🧩</span> Executors</a>
-        <a class="button" href="https://streamable.com/8qwv6m" target="_blank"><span class="emoji">❓</span> Tutorial on how to get the script</a>
-        <a class="button" href="https://executors-eta.vercel.app/" target="_blank"><span class="emoji">👀</span> Soon..</a>
+        <a href="https://scripts-tan.vercel.app/" class="button" target="_blank"><span class="emoji">🗺️</span>Roblox Scripts</a>
+        <a href="https://executors-eta.vercel.app/" class="button" target="_blank"><span class="emoji">🧩</span> Executors</a>
+        <a href="https://streamable.com/8qwv6m" class="button" target="_blank"><span class="emoji">❓</span> Tutorial</a>
+        <a href="https://executors-eta.vercel.app/" class="button" target="_blank"><span class="emoji">👀</span> Soon..</a>
       </div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center; color: var(--text-secondary); font-size: 14px; text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);">
+      <span style="font-size: 1.2em;">⚠️</span>
+      <strong>Note:</strong> USE VPN IF IT TAKES TOO LONG TO LOAD.<br>
+      Here's my recommended VPN:
+      <a href="https://ovpnspider.en.uptodown.com/android" target="_blank" style="color: var(--secondary); text-decoration: underline; font-weight: 600;">
+        OvpnSpider
+      </a>
+    </div>
+
+    <!-- Banner Ad -->
+    <div style="display: flex; justify-content: center; margin: 20px 0;">
+      <div id="adsterra-banner"></div>
+      <script type="text/javascript">
+        atOptions = {
+          'key': '1b0861a26c1eab27fa7dcb146b2228c4',
+          'format': 'iframe',
+          'height': 300,
+          'width': 160,
+          'params': {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/1b0861a26c1eab27fa7dcb146b2228c4/invoke.js"></script>
     </div>
   </div>
 
-  <div style="margin-top: 40px; text-align: center; color: var(--text-secondary); font-size: 14px; text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);">
-    <span style="font-size: 1.2em;">⚠️</span>
-    <strong>Note:</strong> USE VPN IF IT TAKES TOO LONG TO LOAD.<br>
-    Here's my recommended VPN:
-    <a href="https://ovpnspider.en.uptodown.com/android" target="_blank" style="color: var(--secondary); text-decoration: underline; font-weight: 600;">
-      OvpnSpider
-    </a>
-  </div>
-
-  <!-- Banner Ad (Adsterra iframe) -->
-  <div style="display: flex; justify-content: center; margin: 20px 0;">
-    <div id="adsterra-banner"></div>
-    <script type="text/javascript">
-      atOptions = {
-        'key': '1b0861a26c1eab27fa7dcb146b2228c4',
-        'format': 'iframe',
-        'height': 300,
-        'width': 160,
-        'params': {}
-      };
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/1b0861a26c1eab27fa7dcb146b2228c4/invoke.js"></script>
-  </div>
+  <!-- TikTok Detection Popup -->
+  <script>
+    if (navigator.userAgent.toLowerCase().includes("tiktok")) {
+      const chromePopup = document.createElement("div");
+      chromePopup.innerHTML = `
+        <div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #1e1e1e; color: white; padding: 15px 20px; border-radius: 10px; border: 1px solid #8a2be2; box-shadow: 0 0 10px rgba(138, 43, 226, 0.6); z-index: 9999; text-align: center;">
+          <strong>This site may not work inside TikTok.</strong><br>
+          <a href="googlechrome://zyumodz.github.io" class="popup-button" style="margin-top: 10px; display: inline-block; padding: 8px 15px; background: #8a2be2; color: white; border-radius: 8px; text-decoration: none; font-weight: bold;">
+            Open in Chrome
+          </a>
+        </div>
+      `;
+      document.body.appendChild(chromePopup);
+    }
+  </script>
 </body>
 
 </html>

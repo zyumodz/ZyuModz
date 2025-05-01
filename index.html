@@ -210,29 +210,24 @@
         font-size: 42px;
       }
     }
-
-    .popup-button:hover {
-      background-color: var(--secondary);
-      transform: scale(1.05);
-    }
   </style>
 </head>
 
 <body>
   <div class="header">
-    <img class="logo" src="https://i.imgur.com/YuWOptf.png" alt="Yasho Logo">
+    <img class="logo" src="https://i.imgur.com/YuWOptf.png" alt="Yasho Logo" />
     <h1>ZYUMODZ</h1>
     <h2>SCRIPT AND STUFF</h2>
 
     <div class="social-icons">
       <a href="https://www.youtube.com/@ZyuModz" target="_blank">
-        <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+        <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" />
       </a>
     </div>
   </div>
 
   <div style="background-color: rgba(255, 255, 255, 0.05); padding: 10px 15px; border-radius: 10px; margin-bottom: 20px; text-align: center; color: var(--text-secondary); font-size: 15px; box-shadow: 0 0 10px rgba(138, 43, 226, 0.2); border: 1px solid rgba(138, 43, 226, 0.2); max-width: 380px;">
-    <strong>Tip:</strong> Use any browser <em>outside TikTok</em> or it won’t work.<br><span style="color: var(--secondary); font-weight: 500;">Ignore any ads you see!</span>
+    <strong>Tip:</strong> Use any browser <em>outside TikTok</em> or it won’t work.<br /><span style="color: var(--secondary); font-weight: 500;">Ignore any ads you see!</span>
   </div>
 
   <div class="container">
@@ -241,22 +236,19 @@
       <div class="glow-effect"></div>
       <div class="section-content">
         <a href="https://scripts-tan.vercel.app/" class="button" target="_blank"><span class="emoji">🗺️</span>Roblox Scripts</a>
-        <a href="https://executors-eta.vercel.app/" class="button" target="_blank"><span class="emoji">🧩</span> Executors</a>
-        <a href="https://streamable.com/8qwv6m" class="button" target="_blank"><span class="emoji">❓</span> Tutorial</a>
-        <a href="https://executors-eta.vercel.app/" class="button" target="_blank"><span class="emoji">👀</span> Soon..</a>
+        <a href="https://executors-eta.vercel.app/" class="button" target="_blank"><span class="emoji">🧩</span>Executors</a>
+        <a href="https://streamable.com/8qwv6m" class="button" target="_blank"><span class="emoji">❓</span>Tutorial</a>
+        <a href="#" class="button" target="_blank"><span class="emoji">👀</span>Soon..</a>
       </div>
     </div>
 
     <div style="margin-top: 40px; text-align: center; color: var(--text-secondary); font-size: 14px; text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);">
-      <span style="font-size: 1.2em;">⚠️</span>
-      <strong>Note:</strong> USE VPN IF IT TAKES TOO LONG TO LOAD.<br>
+      <span style="font-size: 1.2em;">⚠️</span> <strong>Note:</strong> USE VPN IF IT TAKES TOO LONG TO LOAD.<br />
       Here's my recommended VPN:
-      <a href="https://ovpnspider.en.uptodown.com/android" target="_blank" style="color: var(--secondary); text-decoration: underline; font-weight: 600;">
-        OvpnSpider
-      </a>
+      <a href="https://ovpnspider.en.uptodown.com/android" target="_blank" style="color: var(--secondary); text-decoration: underline; font-weight: 600;">OvpnSpider</a>
     </div>
 
-    <!-- Banner Ad -->
+    <!-- Adsterra Ad -->
     <div style="display: flex; justify-content: center; margin: 20px 0;">
       <div id="adsterra-banner"></div>
       <script type="text/javascript">
@@ -272,21 +264,26 @@
     </div>
   </div>
 
-  <!-- TikTok Detection Popup -->
+  <!-- TikTok Warning -->
+  <div id="tiktok-warning" style="display:none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--primary-dark); color: white; padding: 12px 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(138,43,226,0.6); font-weight: bold; z-index: 9999; cursor: pointer;">
+    Open in Chrome for full functionality
+  </div>
+
   <script>
-    if (navigator.userAgent.toLowerCase().includes("tiktok")) {
-      const chromePopup = document.createElement("div");
-      chromePopup.innerHTML = `
-        <div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #1e1e1e; color: white; padding: 15px 20px; border-radius: 10px; border: 1px solid #8a2be2; box-shadow: 0 0 10px rgba(138, 43, 226, 0.6); z-index: 9999; text-align: center;">
-          <strong>This site may not work inside TikTok.</strong><br>
-          <a href="googlechrome://zyumodz.github.io" class="popup-button" style="margin-top: 10px; display: inline-block; padding: 8px 15px; background: #8a2be2; color: white; border-radius: 8px; text-decoration: none; font-weight: bold;">
-            Open in Chrome
-          </a>
-        </div>
-      `;
-      document.body.appendChild(chromePopup);
+    const ua = navigator.userAgent.toLowerCase();
+    if (ua.includes("tiktok")) {
+      const warning = document.getElementById("tiktok-warning");
+      warning.style.display = "block";
+      warning.addEventListener("click", () => {
+        const url = window.location.href;
+        window.location.href = "googlechrome://" + url.replace(/^https?:\/\//, '');
+      });
     }
   </script>
-</body>
 
+  <!-- Legal Disclaimer -->
+  <div style="color: var(--text-secondary); font-size: 13px; text-align: center; max-width: 400px; margin: 40px auto 10px;">
+    <p><strong>Disclaimer:</strong> This site is for educational purposes only. We do not host or distribute copyrighted material or harmful software. Use responsibly.</p>
+  </div>
+</body>
 </html>
